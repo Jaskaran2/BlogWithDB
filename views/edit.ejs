@@ -22,16 +22,18 @@
 
   <body>
     <div class="container">
-<h1>Compose</h1>
+<h1>Edit</h1>
 
 <div class="form-group">
   <form  action="/compose" method="post">
-  <label>Title</label>
-  <input class="form-control" type="text" name="postTitle">
+
+  <label> Title </label>
+  <textarea rows="1" class="form-control" name="postTitle" ><%= posts.title%></textarea>
   <label>Post</label>
-  <textarea rows="10"  cols="150" class="form-control" name="postBody" ></textarea>
+  <textarea rows="10"  cols="150" class="form-control" name="postBody" ><%= posts.content%></textarea>
+
   <br>
-  <button type="submit" class="btn-primary btn publishButton" name="button" >Publish</button>
+  <button type="submit" class="btn-primary btn" name="button" value=<%= posts.title%>>Publish</button>
   </form>
 </div>
 
