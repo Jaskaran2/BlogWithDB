@@ -22,18 +22,19 @@
 
   <body>
     <div class="container">
-<h1>Compose</h1>
 
-<div class="form-group">
-  <form  action="/compose" method="post">
-  <label>Title</label>
-  <input class="form-control" type="text" name="postTitle">
-  <label>Post</label>
-  <textarea rows="10"  cols="150" class="form-control" name="postBody" ></textarea>
-  <br>
-  <button type="submit" class="btn-primary btn publishButton" name="button" >Publish</button>
-  </form>
-</div>
+
+<h1>Home</h1>
+<p><%= homeDescription %></p>
+
+<%posts.forEach(function(post){%>
+<h1><%= post.title%></h1>
+<p><%= post.content.substring(0,100)+ "...."%> <a href="/post/<%= post._id %>">Read more</a></p>
+<a class="btn btn-sm btn-danger" href="/delete/<%= post._id %>">Delete</a>
+<a class="btn btn-sm btn-primary"  href="/edit/<%= post._id %>">Edit</a>
+
+<%});%>
+
 
 
 
